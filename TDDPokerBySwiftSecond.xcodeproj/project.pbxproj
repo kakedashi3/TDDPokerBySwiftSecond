@@ -15,6 +15,8 @@
 		6F330E8027026856007920C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F330E7E27026856007920C1 /* LaunchScreen.storyboard */; };
 		6F330E8B27026858007920C1 /* TDDPokerBySwiftSecondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F330E8A27026858007920C1 /* TDDPokerBySwiftSecondTests.swift */; };
 		6F330E9627026858007920C1 /* TDDPokerBySwiftSecondUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F330E9527026858007920C1 /* TDDPokerBySwiftSecondUITests.swift */; };
+		6F330EA427026892007920C1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F330EA327026892007920C1 /* Card.swift */; };
+		6F330EA6270268A4007920C1 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F330EA5270268A4007920C1 /* Hand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		6F330E9127026858007920C1 /* TDDPokerBySwiftSecondUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDPokerBySwiftSecondUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F330E9527026858007920C1 /* TDDPokerBySwiftSecondUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDPokerBySwiftSecondUITests.swift; sourceTree = "<group>"; };
 		6F330E9727026858007920C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F330EA327026892007920C1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		6F330EA5270268A4007920C1 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				6F330E7327026842007920C1 /* AppDelegate.swift */,
 				6F330E7527026842007920C1 /* SceneDelegate.swift */,
 				6F330E7727026842007920C1 /* ViewController.swift */,
+				6F330EA327026892007920C1 /* Card.swift */,
+				6F330EA5270268A4007920C1 /* Hand.swift */,
 				6F330E7927026842007920C1 /* Main.storyboard */,
 				6F330E7C27026856007920C1 /* Assets.xcassets */,
 				6F330E7E27026856007920C1 /* LaunchScreen.storyboard */,
@@ -259,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F330E7827026842007920C1 /* ViewController.swift in Sources */,
+				6F330EA6270268A4007920C1 /* Hand.swift in Sources */,
 				6F330E7427026842007920C1 /* AppDelegate.swift in Sources */,
 				6F330E7627026842007920C1 /* SceneDelegate.swift in Sources */,
+				6F330EA427026892007920C1 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

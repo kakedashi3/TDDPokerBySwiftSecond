@@ -10,24 +10,140 @@ import XCTest
 
 class TDDPokerBySwiftSecondTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    //    func testInitializeCard() { // Cardの初期化について
+    //        var card: Card
+    //
+    //        card = Card(rank: .three, suit: .heart) // Cardの初期化
+    //        XCTAssertEqual(card.rank, .three)
+    //        XCTAssertEqual(card.suit, .heart)
+    //
+    //        card = Card(rank: .jack, suit: .spade)
+    //        XCTAssertEqual(card.rank, .jack)
+    //        XCTAssertEqual(card.suit, .spade)
+    //
+    //    }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        func testCardNotation() { // 表記の順番について
+            
+            // structはプロパティの宣言順序に応じて初期化の引数の順序が変わる
+            
+            var card: Card
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+            // ()の二つの式が同等であることをチェックする
+            card = Card(rank: .three, suit: .heart)
+            XCTAssertEqual(card.notation, "3❤︎")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            card = Card(rank: .jack, suit: .spade)
+            XCTAssertEqual(card.notation, "J♠︎")
         }
-    }
+
+        
+    //    func testHasSameSuit() {
+    //
+    //        // ()がYESであるかチェックする
+    //        let card1 = Card(rank: .ace, suit: .heart)
+    //        let card2 = Card(rank: .two, suit: .heart)
+    //        XCTAssertTrue(card1.hasSameSuit(card2))
+    //
+    //        // ()がNOであるかチェックする
+    //        let card3 = Card(rank: .ace, suit: .spade)
+    //        let card4 = Card(rank: .two, suit: .heart)
+    //        XCTAssertFalse(card3.hasSameSuit(card4))
+    //
+    //
+    //    }
+        
+        
+        func testHasSameSuit() {
+            var card1: Card
+            var card2: Card
+
+            card1 = Card(rank: .ace, suit: .heart)
+            card2 = Card(rank: .two, suit: .heart)
+            XCTAssertTrue(card1.hasSameSuit(card2))
+
+            card1 = Card(rank: .ace, suit: .spade)
+            card2 = Card(rank: .two, suit: .heart)
+            XCTAssertFalse(card1.hasSameSuit(card2))
+        }
+
+        func testHasSameRank() {
+            var card1: Card
+            var card2: Card
+
+            card1 = Card(rank: .two, suit: .spade)
+            card2 = Card(rank: .two, suit: .heart)
+            XCTAssertTrue(card1.hasSameRank(card2))
+
+            card1 = Card(rank: .ace, suit: .spade)
+            card2 = Card(rank: .two, suit: .heart)
+            XCTAssertFalse(card1.hasSameRank(card2))
+        }
+        
+        
+    //    func testCardEqual() {
+    //        var card1: Card
+    //        var card2: Card
+    //
+    //        card1 = Card(rank: .jack, suit: .club)
+    //        card2 = Card(rank: .jack, suit: .club)
+    //        XCTAssertEqual(card1, card2)
+    //
+    //        card1 = Card(rank: .queen, suit: .diamond)
+    //        card2 = Card(rank: .jack, suit: .club)
+    //        XCTAssertNotEqual(card1, card2)
+    //
+    //    }
+    //
+        func testCardEqual() {
+            XCTAssertEqual(
+                Card(rank: .jack, suit: .club),
+                Card(rank: .jack, suit: .club)
+            )
+            XCTAssertNotEqual(
+                Card(rank: .queen, suit: .diamond),
+                Card(rank: .jack, suit: .club)
+            )
+            XCTAssertNotEqual(
+                Card(rank: .jack, suit: .diamond),
+                Card(rank: .jack, suit: .club)
+            )
+            XCTAssertNotEqual(
+                Card(rank: .queen, suit: .club),
+                Card(rank: .jack, suit: .club)
+            )
+        }
+    //
+    //    func testIsPair() {
+    //        var card1: Card
+    //        var card2: Card
+    //        var hand: Hand
+    //
+    //        card1 = Card(rank: .king, suit: .spade)
+    //        card2 = Card(rank: .king, suit: .heart)
+    //        hand = Hand(cards: [card1, card2])
+    //        XCTAssertTrue(hand.isPair)
+    //
+    //        card1 = Card(rank: .queen, suit: .spade)
+    //        card2 = Card(rank: .king, suit: .heart)
+    //        hand = Hand(cards: [card1, card2])
+    //        XCTAssertFalse(hand.isPair)
+    //    }
+    //
+    //    func testIsFlush() {
+    //        var card1: Card
+    //        var card2: Card
+    //        var hand: Hand
+    //
+    //        card1 = Card(rank: .ace, suit: .heart)
+    //        card2 = Card(rank: .queen, suit: .heart)
+    //        hand = Hand(cards: [card1, card2])
+    //        XCTAssertTrue(hand.isFlush)
+    //
+    //        card1 = Card(rank: .ace, suit: .spade)
+    //        card2 = Card(rank: .queen, suit: .heart)
+    //        hand = Hand(cards: [card1, card2])
+    //        XCTAssertFalse(hand.isFlush)
+    //    }
 
 }
