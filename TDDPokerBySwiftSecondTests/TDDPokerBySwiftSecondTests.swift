@@ -23,16 +23,13 @@ class TDDPokerBySwiftSecondTests: XCTestCase {
     //
     //    }
 
-        func testCardNotation() { // 表記の順番について
-            
+        // Cardのインスタンスから文字列表記(notation)を取得する
+        func testCardNotation() {
             // structはプロパティの宣言順序に応じて初期化の引数の順序が変わる
-            
             var card: Card
-
             // ()の二つの式が同等であることをチェックする
             card = Card(rank: .three, suit: .heart)
             XCTAssertEqual(card.notation, "3❤︎")
-
             card = Card(rank: .jack, suit: .spade)
             XCTAssertEqual(card.notation, "J♠︎")
         }
@@ -53,7 +50,7 @@ class TDDPokerBySwiftSecondTests: XCTestCase {
     //
     //    }
         
-        
+        // 2枚のカードが同じsuitを持つか判断する
         func testHasSameSuit() {
             var card1: Card
             var card2: Card
@@ -66,7 +63,8 @@ class TDDPokerBySwiftSecondTests: XCTestCase {
             card2 = Card(rank: .two, suit: .heart)
             XCTAssertFalse(card1.hasSameSuit(card2))
         }
-
+        
+        // 2枚のカードが同じrankを持つか判断する
         func testHasSameRank() {
             var card1: Card
             var card2: Card
@@ -96,18 +94,22 @@ class TDDPokerBySwiftSecondTests: XCTestCase {
     //    }
     //
         func testCardEqual() {
+            // rankとsuitが同じ
             XCTAssertEqual(
                 Card(rank: .jack, suit: .club),
                 Card(rank: .jack, suit: .club)
             )
+            // rankとsuitが異なる
             XCTAssertNotEqual(
                 Card(rank: .queen, suit: .diamond),
                 Card(rank: .jack, suit: .club)
             )
+            // rankが同じでsuitが異なる
             XCTAssertNotEqual(
                 Card(rank: .jack, suit: .diamond),
                 Card(rank: .jack, suit: .club)
             )
+            // rankが異なりsuitが同じ
             XCTAssertNotEqual(
                 Card(rank: .queen, suit: .club),
                 Card(rank: .jack, suit: .club)

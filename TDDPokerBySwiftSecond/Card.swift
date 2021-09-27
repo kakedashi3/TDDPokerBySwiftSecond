@@ -36,6 +36,7 @@ struct Card: Equatable {
     let rank: Rank
     let suit: Suit
     
+    // 表記について
     var notation: String {
         return rank.rawValue + suit.rawValue
     }
