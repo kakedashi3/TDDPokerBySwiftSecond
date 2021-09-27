@@ -34,6 +34,8 @@ class TDDPokerBySwiftSecondTests: XCTestCase {
             XCTAssertEqual(card.notation, "J♠︎")
         }
 
+    
+    //
         
     //    func testHasSameSuit() {
     //
