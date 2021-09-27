@@ -41,15 +41,15 @@ struct Card: Equatable {
         return rank.rawValue + suit.rawValue
     }
 
-    // イコールオペレーター
+    // 2枚のカードがsuitである
     func hasSameSuit(_ card: Card) -> Bool {
         return suit == card.suit
     }
-
+    // 2枚のカードがrankである
     func hasSameRank(_ card: Card) -> Bool {
         return rank == card.rank
     }
-
+    // 左辺と右辺の等価判定
     static func ==(lhs: Card, rhs: Card) -> Bool {
         return lhs.hasSameRank(rhs) && lhs.hasSameSuit(rhs)
     }
